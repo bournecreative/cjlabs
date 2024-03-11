@@ -1,0 +1,42 @@
+.btn {
+    border: 0;
+    color: var(--light);
+    cursor: pointer;
+
+     &.btn__menu {
+        background: transparent;
+        height: 100%;
+        position: relative;
+        width: 100%;
+        &::before,
+        &::after {
+            background: var(--light);
+            content: "";
+            display: block;
+            height: 4px;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            transition: 300ms ease;
+            width: 40px;
+        }
+        &::before {
+            top: 40%;
+        }
+        &::after {
+            bottom: 40%;
+        }
+        &:hover {
+            &::before,
+            &::after {
+                background: var(--primary-dark)
+            }
+            &::before {
+                left: 55%;
+            }
+            &::after {
+                left: 45%;
+            }
+        }
+    }
+}
