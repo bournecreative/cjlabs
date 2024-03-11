@@ -1,0 +1,13 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+
+    .nav__menu {
+        height: 80px;
+        width: 80px;
+    }
+}
