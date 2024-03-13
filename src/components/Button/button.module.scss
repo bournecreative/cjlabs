@@ -2,12 +2,20 @@
     border: 0;
     color: var(--light);
     cursor: pointer;
-
-     &.btn__menu {
+    &.btn-exit,
+    &.btn-menu {
         background: transparent;
         height: 100%;
         position: relative;
         width: 100%;
+        &:hover {
+            &::before,
+            &::after {
+                background: var(--primary-light)
+            }
+        }
+    }
+     &.btn-menu {
         &::before,
         &::after {
             background: var(--light);
@@ -37,6 +45,34 @@
             &::after {
                 left: 45%;
             }
+        }
+    }
+    &.btn-exit {
+        transition: 300ms ease;
+        &:hover {
+            transform: scale(1.2);
+        }
+        &::before,
+        &::after {
+            background: var(--light);
+            content: "";
+            display: block;
+            height: 4px;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            transition: 300ms ease;
+            width: 40px;
+        }
+        &::before {
+            left: 25%;
+            top: initial;
+            transform: rotate(-45deg);
+        }
+        &::after {
+            bottom: initial;
+            left: 25%;
+            transform: rotate(45deg);
         }
     }
 }
