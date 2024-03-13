@@ -15,18 +15,18 @@
             }
         }
     }
-     &.btn-menu {
+    &.btn-menu {
         &::before,
         &::after {
             background: var(--light);
             content: "";
             display: block;
-            height: 4px;
+            height: 0.3em;
             left: 50%;
             position: absolute;
             transform: translate(-50%, -50%);
             transition: 300ms ease;
-            width: 40px;
+            width: 3em;
         }
         &::before {
             top: 40%;
@@ -49,6 +49,8 @@
     }
     &.btn-exit {
         transition: 300ms ease;
+        width: 4em;
+        height: 4em;
         &:hover {
             transform: scale(1.2);
         }
@@ -57,12 +59,11 @@
             background: var(--light);
             content: "";
             display: block;
-            height: 4px;
+            height: 0.3em;
             left: 50%;
             position: absolute;
             transform: translate(-50%, -50%);
-            transition: 300ms ease;
-            width: 40px;
+            width: 3em;
         }
         &::before {
             left: 25%;
