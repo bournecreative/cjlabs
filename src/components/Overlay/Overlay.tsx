@@ -1,11 +1,11 @@
 "use client"
 import { useContext } from 'react'
 import { Button } from '@/components/Button/Button'
-import { OverLayContext, Test } from '../../app/page'
+import { OverLayContext, OverlayContextType } from '@/Contexts/OverlayContext'
 import styles from './overlay.module.scss'
 
 export const Overlay = () => {
-    const { state } = useContext(OverLayContext) as Test;
+    const { state } = useContext(OverLayContext) as OverlayContextType;
     
     return (
          <section className={`${state ? styles['overlay-active'] : styles.overlay}`}>

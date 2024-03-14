@@ -1,16 +1,10 @@
 "use client"
-import "./globals.css";
+import { useState } from 'react'
 import { Overlay } from '@/components/Overlay/Overlay';
 import { Navigation } from '@/components/Navigation/Navigation';
 import { Hero50 } from "@/components/Hero50/Hero50";
-import { Dispatch, SetStateAction, createContext, useState } from 'react'
-
-export interface Test {
-   state: boolean
-   dispatch: Dispatch<SetStateAction<boolean>>
-}
-
-export const OverLayContext = createContext<Test | null>(null)
+import { OverLayContext } from '@/Contexts/OverlayContext';
+import "./globals.css";
 
 export default function Home() {
 
