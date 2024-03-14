@@ -10,7 +10,7 @@ export const AdaptiveImage:React.FC<AdaptiveImgProps> = ({desktop, mobile} : Ada
     return (
         <picture >
              <source srcSet={mobile.src} media="(max-width: 768px)"/>
-             <Image className={styles['hero-img']} src={desktop} alt="vector illustration of an astronaut holding a keyboard" priority/>
+             <Image className={styles['hero-img']} src={desktop} width={750} height={1125} alt="vector illustration of an astronaut holding a keyboard" priority/>
         </picture>
     )
 }
