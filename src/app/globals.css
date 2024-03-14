@@ -7,7 +7,7 @@
   --grey: #404042;
   --emergency: #FF5F5D;
   --egg-white: #F0E4B2;
-
+  
   * {
       box-sizing: border-box;
     }
@@ -25,4 +25,8 @@
       max-width: 100vw;
       overflow-x: hidden;
     }
+
+   .roboto {
+    font-family: var(--font-roboto);
+   }
 }

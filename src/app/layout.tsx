@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Anton } from 'next/font/google'
+import { Anton, Roboto } from 'next/font/google'
 
 const anton = Anton({ subsets: ['latin'], weight: '400'})
+const roboto = Roboto({ subsets: ['latin'], weight: '400', variable: '--font-roboto'})
 
 export const metadata: Metadata = {
   title: "christianjohnlabs",
@@ -15,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={anton.className}>
+      <body className={`${anton.className} ${roboto.variable}`}>
         {children}
       </body>
     </html>
