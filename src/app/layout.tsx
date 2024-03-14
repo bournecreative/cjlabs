@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Navigation } from '@/components/Navigation/Navigation'
+import { Anton } from 'next/font/google'
 
-const inter = Inter({ subsets: ["latin"] });
+const anton = Anton({ subsets: ['latin'], weight: '400'})
 
 export const metadata: Metadata = {
   title: "christianjohnlabs",
@@ -16,10 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navigation />
+      <body className={anton.className}>
         {children}
-        </body>
+      </body>
     </html>
   );
 }
