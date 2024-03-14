@@ -1,30 +1,30 @@
-import Image from 'next/image'
+"use client"
 import "./globals.css";
-import styles from "./page.module.scss"
-import heroImage from '../../public/new-era-hero.png'
+import { Overlay } from '@/components/Overlay/Overlay';
+import { Navigation } from '@/components/Navigation/Navigation';
+import { Hero50 } from "@/components/Hero50/Hero50";
+import { Dispatch, SetStateAction, createContext, useState } from 'react'
+
+export interface Test {
+   state: boolean
+   dispatch: Dispatch<SetStateAction<boolean>>
+}
+
+export const OverLayContext = createContext<Test | null>(null)
 
 export default function Home() {
+
+  const [state, dispatch] = useState(false);
+
   return (
-    <main>
-      <section className={styles.hero}>
-        <div className={styles['hero-content']}>
-          <h1><span>A</span> developer <span>space</span> to explore and experiment with ideas.</h1>
-          <div className={styles['content-block']}>
-            <div className={styles['content-title']}>
-                <h2>IDEATE</h2>
-            </div>
-            <div className={styles['content-title']}>
-                <h2>PROTOTYPE</h2>
-            </div>
-            <div className={styles['content-title']}>
-                <h2>DEPLOY</h2>
-            </div>
-        </div>
-        </div>
-        <div className={styles.hero__visual}>
-          <Image className={styles.hero__img} src={heroImage} alt="vector illustration of an astronaut holding a keyboard" sizes="(max-width: 768px) 10vw" priority/>
-        </div>
-      </section>
-    </main>
+    <>
+      <OverLayContext.Provider value={{state, dispatch }}>
+        <Navigation />
+        <Overlay />
+        <main>
+          <Hero50 />
+        </main>
+      </OverLayContext.Provider>
+    </>
   );
 }
