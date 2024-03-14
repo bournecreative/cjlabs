@@ -1,0 +1,104 @@
+.overlay {
+    align-items: center;
+    background: var(--dark-dark);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    left: 0;
+    opacity: 0.98;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    transform: translateY(-200vh);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    z-index: 100;
+
+    .overlay-nav {
+        height: 80px;
+        width: 80px;
+        z-index: 100;
+    }
+
+    .overlay-content {
+        color: var(--light);
+        padding-top: 2rem;
+        position: relative;
+
+        h2 {
+            color: var(--primary-dark);
+            font-size: 2.7rem;
+            margin: 0;
+            @media (min-width: 768px) {
+                font-size: 3rem;
+            }
+        }
+
+        p {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            @media (min-width: 768px) {
+                font-size: 1.6rem;
+                line-height: 1.8;
+            }
+        }
+
+        .visual {
+            color: var(--primary-dark);
+            font-size: 7em;
+            position: absolute;
+            left: 50%;
+            opacity: .10;
+            top: -20%;
+            transform: translateX(-50%);
+        }
+
+        .skills {
+            margin: 24px 0;
+        }
+        .skill-grid {
+            color: var(--dark-dark);
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style-type: none;
+                padding: 10px;
+                margin: 4px;
+
+                &.dev {
+                    background-color: var(--primary-light);
+                }
+
+                &.dev-tools {
+                    background-color: var(--emergency);
+                }
+
+                &.creative {
+                    background-color: var(--primary-dark);
+                }
+
+                &.design {
+                    background-color: var(--primary-light);
+                }
+
+                &.foundation {
+                    background-color: var(--primary-light);
+                }
+            }
+        }
+    }
+    @media (min-width: 768px) {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+}
+
+.overlay-active {
+    @extend .overlay;
+    transform: translateY(0);
+}
